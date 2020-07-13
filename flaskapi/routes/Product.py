@@ -1,7 +1,7 @@
 from flask_restful import Resource
 from flask import request, jsonify
 from extensions import db
-from model import Product, products_schema, product_schema
+from models.Product import Product, products_schema, product_schema
 
 
 class add_product(Resource):
@@ -65,9 +65,3 @@ class home(Resource):
     def get(self):
         return jsonify({"HI": "Welcome"})
 
-
-# api.add_resource(add_product, '/product')
-# api.add_resource(get_all_products, '/products')
-# api.add_resource(get_product, '/product/<id>')
-# api.add_resource(update_product, '/product/<id>')
-# api.add_resource(delete_product, '/product/<id>')
