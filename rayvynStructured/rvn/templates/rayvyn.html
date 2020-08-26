@@ -1,0 +1,66 @@
+{% extends 'layout/base.html' %}
+{% include 'layout/header.html' %}
+{% block title %} Rayvyn Interface {% endblock %}
+{#{% include 'header.html' %}#}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col md-12">
+            <div class="jumbotron p-3">
+                <h2>All <b>CVE(s) </b>  </h2>
+{#                    <button type="button"  class="btn btn-success float-right"#}
+{#                data-toggle="modal" data-target="#mymodal">Refresh Cve List</button> </h2>#}
+{#               {% for i in data %}#}
+{#                    <p>{{ i.cve_id }} {{ i.impact }}  {{ i.last_modified }}</p>#}
+{#                    {% endfor %}#}
+{#                    {% endblock %}#}
+{#    {% for message in messages %}#}
+{#                <div class="alert alert-success alert-dismissable" role="alert">#}
+{#                    <button type="button" class="close" data-dismiss="alert" aria-label="close">#}
+{#                        <span aria-hidden="true">x</span>#}
+{#                    </button>#}
+{#                {{message}}#}
+{#                </div>#}
+{#                {% endfor %}#}
+{##}
+{#                {% endif %}#}
+{#                {% endwith %}#}
+            <div class="table-responsive">
+                <table id="cve_table" class="display spacer dataTable">
+{#                    <tr>#}
+{#                        <th>ID</th>#}
+{#                        <th>Feed Vendor</th>#}
+{#                        <th>Impact</th>#}
+{#                        <th>Description</th>#}
+{#                        <th>Vendor</th>#}
+{#                        <th>Product</th>#}
+{#                        <th>Last Modified</th>#}
+{##}
+{#                    </tr>#}
+
+                       </table>
+            </div>
+{#                   {% endfor %}#}
+            </div>
+        </div>
+    </div>
+{% block scripts %}
+    {{ super }}
+
+    <script src='{{url_for("static", filename="jquery-3.5.1.js") }}'></script>
+
+{#    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>#}
+{#    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>#}
+     <link rel="stylesheet" href='{{url_for("static", filename="datatables.css") }}'/>
+    <script src='{{url_for("static", filename="datatables.js") }}'></script>
+{#     <script src="https://cdn.datatables.net/responsive/2.2.1/js/dataTables.responsive.min.js"></script>#}
+    <script src='{{url_for("static", filename="datatables_cve.js") }}'></script>
+
+
+
+    {% endblock %}
+</div>
+
+
+
+{% endblock %}
